@@ -79,19 +79,29 @@ function Home() {
 /* ─────────── Hero ─────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cream">
-      <div className="absolute -left-32 top-32 h-72 w-72 rounded-full bg-accent/25 blur-3xl" aria-hidden />
-      <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-coral/20 blur-3xl" aria-hidden />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:items-center md:gap-10 md:py-24 lg:px-8">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
+    <section className="relative min-h-[560px] overflow-hidden sm:min-h-[620px] md:min-h-[720px]">
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
+        <img
+          src={hero}
+          alt="A happy dog and cat together at Furryghor"
+          className="h-full w-full object-cover"
+        />
+        {/* Left-to-right gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/50 to-transparent" />
+      </div>
+
+      {/* Content — anchored left */}
+      <div className="relative mx-auto flex max-w-7xl items-center px-4 py-20 sm:px-6 md:py-28 lg:px-8 min-h-[560px] sm:min-h-[620px] md:min-h-[720px]">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             5-Star Pet Hotel · Dhaka
           </span>
-          <h1 className="mt-6 font-display text-5xl font-black leading-[1.05] text-primary sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-display text-5xl font-black leading-[1.05] text-white sm:text-6xl lg:text-7xl">
             The first <span className="text-accent">dog & cat hostel</span> in Dhaka
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
             Furryghor Foster Home is a 5-star quality pet hotel for your animal companions in Dhaka.
             When you are away, we take care of your furbabies with safety, security, privacy, and
             ensure a wonderful playful time for them!
@@ -101,7 +111,7 @@ function Hero() {
               href={GULSHAN}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:scale-[1.02] hover:bg-primary/90"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-soft transition hover:scale-[1.02]"
             >
               Chat with Gulshan Branch
             </a>
@@ -115,23 +125,12 @@ function Hero() {
             </a>
           </div>
         </div>
+      </div>
 
-        <div className="relative">
-          <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-accent/30 via-coral/20 to-primary/20 blur-2xl" />
-          <div className="overflow-hidden rounded-[2rem] border-4 border-background shadow-soft">
-            <img
-              src={hero}
-              alt="A happy dog and cat together at Furryghor"
-              width={1600}
-              height={1100}
-              className="aspect-[4/3] h-full w-full object-cover"
-            />
-          </div>
-          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-background px-5 py-4 shadow-warm sm:block">
-            <p className="font-display text-2xl font-bold text-primary">24/7</p>
-            <p className="text-xs text-muted-foreground">Care & monitoring</p>
-          </div>
-        </div>
+      {/* 24/7 floating badge */}
+      <div className="absolute bottom-6 left-4 hidden rounded-2xl bg-white/90 px-5 py-4 shadow-warm backdrop-blur-sm sm:block sm:left-6 lg:left-8">
+        <p className="font-display text-2xl font-bold text-primary">24/7</p>
+        <p className="text-xs text-muted-foreground">Care & monitoring</p>
       </div>
     </section>
   );
