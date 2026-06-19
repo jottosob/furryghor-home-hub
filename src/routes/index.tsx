@@ -32,6 +32,10 @@ import pet4 from "@/assets/pet-4.jpg";
 import pet5 from "@/assets/pet-5.jpg";
 import pet6 from "@/assets/pet-6.jpg";
 
+import pressNewAge from "@/assets/press-newage.png";
+import pressDailyStar from "@/assets/press-dailystar.svg";
+import pressProthomAlo from "@/assets/press-prothomalo.png";
+
 const MIRPUR = "https://www.facebook.com/Furryghor/";
 const GULSHAN = "https://www.facebook.com/furryghorgulshan";
 
