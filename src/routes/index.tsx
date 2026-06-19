@@ -1,29 +1,562 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { TopBar } from "@/components/TopBar";
+import { Footer } from "@/components/Footer";
+
+import hero from "@/assets/hero.jpg";
+import serviceCat from "@/assets/service-cat.jpg";
+import serviceDog from "@/assets/service-dog.jpg";
+import serviceDay from "@/assets/service-day.jpg";
+import team from "@/assets/team.jpg";
+import client from "@/assets/client.jpg";
+import space1 from "@/assets/space-1.jpg";
+import space2 from "@/assets/space-2.jpg";
+import space3 from "@/assets/space-3.jpg";
+import pet1 from "@/assets/pet-1.jpg";
+import pet2 from "@/assets/pet-2.jpg";
+import pet3 from "@/assets/pet-3.jpg";
+import pet4 from "@/assets/pet-4.jpg";
+import pet5 from "@/assets/pet-5.jpg";
+import pet6 from "@/assets/pet-6.jpg";
+
+const MIRPUR = "https://www.facebook.com/Furryghor/";
+const GULSHAN = "https://www.facebook.com/furryghorgulshan";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Furryghor — The First Dog & Cat Hostel in Dhaka" },
+      {
+        name: "description",
+        content:
+          "Furryghor Foster Home is a 5-star quality pet hotel in Dhaka. Cat & dog boarding, day stays, and 24/7 care across Mirpur and Gulshan.",
+      },
+      { property: "og:title", content: "Furryghor — The First Dog & Cat Hostel in Dhaka" },
+      {
+        property: "og:description",
+        content: "A 5-star quality pet hotel in Dhaka. Mirpur & Gulshan branches.",
+      },
+      { property: "og:image", content: hero },
+      { name: "twitter:image", content: hero },
     ],
   }),
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <TopBar />
+      <Hero />
+      <PressSection />
+      <QualitySection />
+      <ServicesSection />
+      <VideosSection />
+      <ReviewSection />
+      <TeamSection />
+      <TourSection />
+      <ClientsGallery />
+      <FAQSection />
+      <LocationSection />
+      <Footer />
     </div>
+  );
+}
+
+/* ─────────── Hero ─────────── */
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-cream">
+      <div className="absolute -left-32 top-32 h-72 w-72 rounded-full bg-accent/25 blur-3xl" aria-hidden />
+      <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-coral/20 blur-3xl" aria-hidden />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:items-center md:gap-10 md:py-24 lg:px-8">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            5-Star Pet Hotel · Dhaka
+          </span>
+          <h1 className="mt-6 font-display text-5xl font-black leading-[1.05] text-primary sm:text-6xl lg:text-7xl">
+            The first <span className="text-accent">dog & cat hostel</span> in Dhaka
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Furryghor Foster Home is a 5-star quality pet hotel for your animal companions in Dhaka.
+            When you are away, we take care of your furbabies with safety, security, privacy, and
+            ensure a wonderful playful time for them!
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={GULSHAN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:scale-[1.02] hover:bg-primary/90"
+            >
+              Chat with Gulshan Branch
+            </a>
+            <a
+              href={MIRPUR}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-warm transition hover:scale-[1.02]"
+            >
+              Chat with Mirpur Branch
+            </a>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-accent/30 via-coral/20 to-primary/20 blur-2xl" />
+          <div className="overflow-hidden rounded-[2rem] border-4 border-background shadow-soft">
+            <img
+              src={hero}
+              alt="A happy dog and cat together at Furryghor"
+              width={1600}
+              height={1100}
+              className="aspect-[4/3] h-full w-full object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-background px-5 py-4 shadow-warm sm:block">
+            <p className="font-display text-2xl font-bold text-primary">24/7</p>
+            <p className="text-xs text-muted-foreground">Care & monitoring</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Press ─────────── */
+function PressSection() {
+  const press = [
+    {
+      quote: "“A home for pets away from home”",
+      outlet: "New Age",
+      url: "https://www.newagebd.net/article/163715/furryghor-a-home-for-pets-away-from-home",
+    },
+    {
+      quote: "“A home — For your pets”",
+      outlet: "The Daily Star",
+      url: "https://www.thedailystar.net/news/bangladesh/news/pit-stop-your-pets-2971486",
+    },
+    {
+      quote: "“ইলি-বিলিদের হোটেল ‘ফারিঘর’”",
+      outlet: "Prothom Alo",
+      url: "https://www.prothomalo.com/bangladesh/capital/%E0%A6%87%E0%A6%B2%E0%A6%BF-%E0%A6%AC%E0%A6%BF%E0%A6%B2%E0%A6%BF%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%B9%E0%A7%8B%E0%A6%9F%E0%A7%87%E0%A6%B2-%E0%A6%AB%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%98%E0%A6%B0",
+    },
+  ];
+  return (
+    <section className="border-y border-border bg-background py-14">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+          As featured in
+        </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {press.map((p) => (
+            <a
+              key={p.outlet}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-2xl border border-border bg-card p-6 text-center transition hover:-translate-y-1 hover:border-accent hover:shadow-warm"
+            >
+              <p className="font-display text-xl font-semibold leading-snug text-primary group-hover:text-accent">
+                {p.quote}
+              </p>
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                {p.outlet}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Quality ─────────── */
+function QualitySection() {
+  return (
+    <section id="about" className="bg-cream py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
+        <div className="grid grid-cols-2 gap-3">
+          <img src={space1} alt="Pet hotel interior" loading="lazy" width={1200} height={900}
+            className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft" />
+          <div className="flex flex-col gap-3 pt-10">
+            <img src={space2} alt="Dog apartment" loading="lazy" width={1200} height={900}
+              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft" />
+            <img src={space3} alt="Reception" loading="lazy" width={1200} height={900}
+              className="aspect-square w-full rounded-3xl object-cover shadow-warm" />
+          </div>
+        </div>
+        <div>
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+            Why Furryghor
+          </span>
+          <h2 className="mt-3 font-display text-4xl font-black leading-tight text-primary sm:text-5xl">
+            Quality pet hostel in Dhaka
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Furryghor Foster Home is a 5-star quality hotel for your animal companions. When you are
+            away, we take care of your furbabies with safety, security, privacy and ensure a
+            wonderful playful time for them.
+          </p>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            {["24/7 caregivers", "Private cabins", "Daily playtime", "Reasonable fees"].map((f) => (
+              <li key={f} className="flex items-center gap-3 rounded-xl bg-background px-4 py-3 shadow-sm">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/20 text-accent">★</span>
+                <span className="font-medium text-foreground">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Services ─────────── */
+function ServicesSection() {
+  const services = [
+    {
+      title: "Cat Boarding",
+      img: serviceCat,
+      desc:
+        "We provide short and long term (per night basis) stay for our furry cat friends here at Furryghor. From just a night to as many nights you need, your cat buddy will be safe & healthy with us.",
+    },
+    {
+      title: "Dog Boarding",
+      img: serviceDog,
+      desc:
+        "Keep your dog at our sky view mini dog apartments. Your dog gets 24/7 monitoring, a buddy to play with & his/her own litter station along with a dedicated play area.",
+    },
+    {
+      title: "Day Stay",
+      img: serviceDay,
+      desc:
+        "Fancy going out on a quick date or have an urgent \"thing\" to take care of and need a place for a few hours for your cat or dog? We got you covered!!",
+    },
+  ];
+  return (
+    <section id="products" className="bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">What we do</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">Our services</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Here's a quick look of Furryghor services…</p>
+        </div>
+        <div className="mt-14 grid gap-8 md:grid-cols-3">
+          {services.map((s, i) => (
+            <article
+              key={s.title}
+              className="group overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-2 hover:shadow-warm"
+            >
+              <div className="relative overflow-hidden">
+                <img src={s.img} alt={s.title} loading="lazy" width={800} height={800}
+                  className="aspect-square w-full object-cover transition duration-700 group-hover:scale-105" />
+                <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-bold text-primary backdrop-blur">
+                  0{i + 1}
+                </span>
+              </div>
+              <div className="p-7">
+                <h3 className="font-display text-2xl font-bold text-primary">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Videos ─────────── */
+function VideosSection() {
+  const videos = ["cFYp6FPByh4", "2PfqkNvcKgw"];
+  return (
+    <section className="bg-cream py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Watch</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">
+            A day at Furryghor
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {videos.map((id) => (
+            <div key={id} className="overflow-hidden rounded-3xl border-4 border-background shadow-soft">
+              <div className="aspect-video w-full">
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}`}
+                  title="Furryghor video"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Review ─────────── */
+function ReviewSection() {
+  return (
+    <section className="bg-background py-20 sm:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-5 md:items-center lg:px-8">
+        <div className="md:col-span-2">
+          <div className="overflow-hidden rounded-3xl border-4 border-background shadow-warm">
+            <img src={client} alt="Munia Husnaeen" loading="lazy" width={900} height={1000}
+              className="aspect-[4/5] w-full object-cover" />
+          </div>
+        </div>
+        <div className="md:col-span-3">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+            Loved by pet parents
+          </span>
+          <p className="mt-4 font-display text-2xl leading-relaxed text-primary sm:text-3xl">
+            <span className="text-5xl text-accent">“</span>
+            A nice holiday home for furr babies. I found the best place where I can keep my cat safe
+            and also happy while I am travelling. I kept Sophie at Furryghor for 3 nights as I went
+            outside the city. She loved the place so much that when I came here, she kept playing
+            totally ignoring me. She was under the care of two expert attendants for 24/7. Fee is
+            very reasonable considering the care they give. If you really love your pet, you can
+            spend for their best treatment, right? Best wishes for Furryghor.
+          </p>
+          <div className="mt-6 flex items-center gap-3">
+            <div className="h-px flex-1 bg-border" />
+            <p className="font-display text-lg font-bold text-primary">— Munia Husnaeen</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Team ─────────── */
+function TeamSection() {
+  return (
+    <section className="bg-primary py-20 text-primary-foreground sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
+        <div className="order-2 md:order-1">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Our team</span>
+          <h2 className="mt-3 font-display text-4xl font-black sm:text-5xl">Amazing team</h2>
+          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85">
+            Us three founders (Emil, Nabila & Farhan) started Furryghor as a common passion project
+            for pets of Dhaka, Bangladesh. We face the problem every year when we are planning trips
+            and vacations — and we wanted to build something to solve that problem = resulting in
+            Furryghor!
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-primary-foreground/85">
+            We all have pets and we know how important it is to ensure a safe and fun atmosphere for
+            them.
+          </p>
+        </div>
+        <div className="order-1 md:order-2">
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-accent/30 blur-2xl" />
+            <img src={team} alt="Furryghor founders" loading="lazy" width={1200} height={900}
+              className="aspect-[4/3] w-full rounded-[2rem] border-4 border-primary-foreground/10 object-cover shadow-warm" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Tour (Carousel) ─────────── */
+function TourSection() {
+  const photos = [space1, space2, space3, serviceCat, serviceDog, serviceDay];
+  return (
+    <section className="bg-cream py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Step inside</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">
+            Tour our space
+          </h2>
+        </div>
+        <div className="mt-12">
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {photos.map((src, i) => (
+                <CarouselItem key={i} className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3">
+                  <div className="overflow-hidden rounded-3xl border-4 border-background shadow-soft">
+                    <img src={src} alt={`Furryghor space ${i + 1}`} loading="lazy"
+                      className="aspect-[4/3] w-full object-cover" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2 bg-background" />
+            <CarouselNext className="right-2 bg-background" />
+          </Carousel>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Clients Gallery ─────────── */
+function ClientsGallery() {
+  const pets = [pet1, pet2, pet3, pet4, pet5, pet6];
+  return (
+    <section id="gallery" className="bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Hall of fame</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">
+            Our precious clients
+          </h2>
+        </div>
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {pets.map((src, i) => (
+            <div key={i} className="group overflow-hidden rounded-2xl shadow-sm">
+              <img src={src} alt={`Furryghor client pet ${i + 1}`} loading="lazy"
+                className="aspect-square w-full object-cover transition duration-700 group-hover:scale-110" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── FAQ ─────────── */
+function FAQSection() {
+  const faqs: { q: string; a: React.ReactNode }[] = [
+    {
+      q: "How do I book Furryghor?",
+      a: (
+        <>
+          You can contact{" "}
+          <a href={MIRPUR} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent underline-offset-4 hover:underline">
+            Mirpur Branch here
+          </a>{" "}
+          or{" "}
+          <a href={GULSHAN} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent underline-offset-4 hover:underline">
+            Gulshan Branch here
+          </a>
+          .
+        </>
+      ),
+    },
+    {
+      q: "Do I need to provide food and litter?",
+      a: "You just need to provide food (treat is on us). We also take care of the litter situation. Don't worry about that bit!",
+    },
+    {
+      q: "I have multiple cats — will they stay in one cabin?",
+      a: "If the cats are from one family, we allow them to stay together in one cabin. However, if you have more than 3 cats, we wouldn't be able to let them stay in one as the cabin will be cramped.",
+    },
+    {
+      q: "Will my cats or dogs play with other cats / dogs?",
+      a: "No. We don't allow pets from one household to play with another household's pets to avoid sudden fights, injuries and their happiness. However, they will play and cuddle with us all day.",
+    },
+    {
+      q: "Can I get access to the CCTV?",
+      a: "At this moment, we don't allow access to CCTV, however, you can message or video call us anytime and we will be able to share photos / videos. Our caregivers are in Furryghor 24/7.",
+    },
+  ];
+  return (
+    <section className="bg-cream py-20 sm:py-28">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">FAQ</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">
+            Frequently asked questions
+          </h2>
+        </div>
+        <Accordion type="single" collapsible className="mt-12 space-y-3">
+          {faqs.map((f, i) => (
+            <AccordionItem
+              key={i}
+              value={`item-${i}`}
+              className="overflow-hidden rounded-2xl border border-border bg-background px-5 shadow-sm"
+            >
+              <AccordionTrigger className="py-5 text-left font-display text-lg font-bold text-primary hover:no-underline [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-accent">
+                {f.q}
+              </AccordionTrigger>
+              <AccordionContent className="pb-5 text-base leading-relaxed text-muted-foreground">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────── Location ─────────── */
+function LocationSection() {
+  const locations = [
+    {
+      name: "Furryghor Mirpur",
+      address: "80 Zoo Road, Mirpur 1216, Dhaka",
+      map: "https://www.google.com/maps?q=80+Zoo+Road+Mirpur+1216+Dhaka&output=embed",
+      cta: MIRPUR,
+    },
+    {
+      name: "Furryghor Gulshan",
+      address: "205/1 Tejgaon Link Road, Dhaka",
+      map: "https://www.google.com/maps?q=205/1+Tejgaon+Link+Road+Dhaka&output=embed",
+      cta: GULSHAN,
+    },
+  ];
+  return (
+    <section className="bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Visit us</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">Our location</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Two branches across Dhaka. Drop by anytime.</p>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {locations.map((loc) => (
+            <div key={loc.name} className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
+              <div className="aspect-[4/3] w-full">
+                <iframe
+                  src={loc.map}
+                  title={loc.name}
+                  loading="lazy"
+                  className="h-full w-full border-0"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="flex items-center justify-between gap-4 p-6">
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-primary">{loc.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{loc.address}</p>
+                </div>
+                <a
+                  href={loc.cta}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-warm transition hover:scale-[1.03]"
+                >
+                  Chat
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
