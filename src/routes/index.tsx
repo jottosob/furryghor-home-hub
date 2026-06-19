@@ -146,40 +146,46 @@ function PressSection() {
     {
       logo: pressNewAge,
       alt: "New Age logo",
+      quote: "“A home for pets away from home”",
       url: "https://www.newagebd.net/article/163715/furryghor-a-home-for-pets-away-from-home",
     },
     {
       logo: pressDailyStar,
       alt: "The Daily Star logo",
+      quote: "“A home — For your pets”",
       url: "https://www.thedailystar.net/news/bangladesh/news/pit-stop-your-pets-2971486",
     },
     {
       logo: pressProthomAlo,
       alt: "Prothom Alo logo",
+      quote: "“ইলি-বিলিদের হোটেল ‘ফারিঘর’”",
       url: "https://www.prothomalo.com/bangladesh/capital/%E0%A6%87%E0%A6%B2%E0%A6%BF-%E0%A6%AC%E0%A6%BF%E0%A6%B2%E0%A6%BF%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%B9%E0%A7%8B%E0%A6%9F%E0%A7%87%E0%A6%B2-%E0%A6%AB%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%98%E0%A6%B0",
     },
   ];
   return (
-    <section className="border-y border-border bg-background py-10 sm:py-14">
+    <section className="border-y border-border bg-background py-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
           As featured in
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {press.map((p) => (
             <a
               key={p.alt}
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-12 items-center justify-center transition hover:opacity-100 sm:h-14"
+              className="group flex flex-col items-center rounded-2xl border border-border bg-card p-6 text-center transition hover:-translate-y-1 hover:border-accent hover:shadow-warm"
             >
               <img
                 src={p.logo}
                 alt={p.alt}
-                className="max-h-full w-auto object-contain opacity-60 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                className="h-10 w-auto object-contain opacity-70 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0 sm:h-12"
                 loading="lazy"
               />
+              <p className="mt-4 font-display text-xl font-semibold leading-snug text-primary group-hover:text-accent">
+                {p.quote}
+              </p>
             </a>
           ))}
         </div>
