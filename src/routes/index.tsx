@@ -79,7 +79,7 @@ function Home() {
 /* ─────────── Hero ─────────── */
 function Hero() {
   return (
-    <section className="relative min-h-[560px] overflow-hidden sm:min-h-[620px] md:min-h-[720px]">
+    <section className="relative min-h-[480px] overflow-hidden sm:min-h-[520px] md:min-h-[580px]">
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <img
@@ -92,7 +92,7 @@ function Hero() {
       </div>
 
       {/* Content — anchored left */}
-      <div className="relative mx-auto flex max-w-7xl items-center px-4 py-20 sm:px-6 md:py-28 lg:px-8 min-h-[560px] sm:min-h-[620px] md:min-h-[720px]">
+      <div className="relative mx-auto flex max-w-7xl items-center px-4 py-14 sm:px-6 md:py-20 lg:px-8 min-h-[480px] sm:min-h-[520px] md:min-h-[580px]">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -128,7 +128,7 @@ function Hero() {
       </div>
 
       {/* 24/7 floating badge */}
-      <div className="absolute bottom-6 left-4 hidden rounded-2xl bg-white/90 px-5 py-4 shadow-warm backdrop-blur-sm sm:block sm:left-6 lg:left-8">
+      <div className="absolute top-6 right-4 hidden rounded-2xl bg-white/90 px-5 py-4 shadow-warm backdrop-blur-sm sm:block sm:right-6 lg:right-8">
         <p className="font-display text-2xl font-bold text-primary">24/7</p>
         <p className="text-xs text-muted-foreground">Care & monitoring</p>
       </div>
