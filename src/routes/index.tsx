@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronDown } from "lucide-react";
+
 import {
   Accordion,
   AccordionContent,
@@ -489,9 +489,8 @@ function FAQSection() {
               value={`item-${i}`}
               className="overflow-hidden rounded-2xl border border-border bg-background px-5 shadow-sm"
             >
-              <AccordionTrigger className="py-5 text-left font-display text-lg font-bold text-primary hover:no-underline [&>svg]:hidden">
-                <span className="flex-1">{f.q}</span>
-                <ChevronDown className="h-5 w-5 shrink-0 text-accent transition-transform duration-300 group-data-[state=open]/accordion-trigger:rotate-180" />
+              <AccordionTrigger className="py-5 text-left font-display text-lg font-bold text-primary hover:no-underline [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-accent">
+                {f.q}
               </AccordionTrigger>
               <AccordionContent className="pb-5 text-base leading-relaxed text-muted-foreground">
                 {f.a}
