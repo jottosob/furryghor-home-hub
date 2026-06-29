@@ -501,11 +501,9 @@ function TourSection() {
 
 /* ─────────── Clients Gallery ─────────── */
 function ClientsGallery() {
-  const clientImages = Array.from({ length: 12 }, (_, i) =>
-    new URL(`../assets/client-${i + 1}.jpg.asset.json`, import.meta.url).pathname
-  );
-  const pets = Array.from({ length: 12 }, (_, i) => ({
-    src: clientAssets[i].url,
+  const clientAssets = [client1, client2, client3, client4, client5, client6, client7, client8, client9, client10, client11, client12];
+  const pets = clientAssets.map((a, i) => ({
+    src: a.url,
     alt: `Furryghor client pet ${i + 1}`,
   }));
   const [open, setOpen] = useState<number | null>(null);
