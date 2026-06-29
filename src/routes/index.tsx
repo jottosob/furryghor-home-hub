@@ -62,6 +62,7 @@ import client9 from "@/assets/client-9.jpg.asset.json";
 import client10 from "@/assets/client-10.jpg.asset.json";
 import client11 from "@/assets/client-11.jpg.asset.json";
 import client12 from "@/assets/client-12.jpg.asset.json";
+import qualityHero from "@/assets/quality-hero.jpg.asset.json";
 
 import pressNewAge from "@/assets/press-newage.png";
 import pressDailyStar from "@/assets/press-dailystar.svg";
