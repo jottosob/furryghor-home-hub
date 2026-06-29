@@ -35,7 +35,7 @@ import { TopBar } from "@/components/TopBar";
 import { Footer } from "@/components/Footer";
 import { Lightbox } from "@/components/Lightbox";
 
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.jpg.asset.json";
 import serviceCatAsset from "@/assets/service-cat.jpg.asset.json";
 import serviceDogAsset from "@/assets/service-dog.jpg.asset.json";
 import serviceDayAsset from "@/assets/service-day.jpg.asset.json";
@@ -101,8 +101,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "A 5-star quality pet hotel in Dhaka. Mirpur & Gulshan branches.",
       },
-      { property: "og:image", content: hero },
-      { name: "twitter:image", content: hero },
+      { property: "og:image", content: hero.url },
+      { name: "twitter:image", content: hero.url },
     ],
   }),
   component: Home,
@@ -137,7 +137,7 @@ function Hero() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <img
-          src={hero}
+          src={hero.url}
           alt="A happy dog and cat together at Furryghor"
           className="h-full w-full object-cover"
         />
