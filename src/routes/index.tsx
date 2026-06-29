@@ -372,7 +372,7 @@ function ReviewSection() {
 
 /* ─────────── Team ─────────── */
 function TeamSection() {
-  const slides = [team, space1, space2, space3, serviceCat, serviceDog];
+  const slides = teamPhotos;
   const [i, setI] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setI((v) => (v + 1) % slides.length), 3500);
