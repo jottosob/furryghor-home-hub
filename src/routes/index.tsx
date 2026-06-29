@@ -373,19 +373,19 @@ function FeaturesAmenitiesSection() {
       desc: "On-call veterinary assistance for check-ups, meds, and emergencies.",
     },
     {
-      icon: Scissors,
-      title: "Grooming",
-      desc: "Bathing, brushing, nail trimming, and tidy-ups so your pet returns fresh.",
+      icon: Flame,
+      title: "Fire Safety",
+      desc: "Fire extinguishers, smoke detectors, and an emergency plan keep every guest safe.",
     },
     {
-      icon: Sparkles,
-      title: "Playtime & Activities",
-      desc: "Daily supervised play sessions, toys, and exercise for happy, healthy pets.",
+      icon: TreeDeciduous,
+      title: "Rooftop Garden",
+      desc: "Open-air green space for supervised play, fresh air, and sunshine breaks.",
     },
     {
-      icon: MessageCircle,
-      title: "Regular Updates",
-      desc: "Photos and messages sent to you so you never miss a moment with your pet.",
+      icon: Users,
+      title: "Client Profiles",
+      desc: "Individual pet profiles track diet, meds, habits, and owner preferences for tailored care.",
     },
   ];
   return (
