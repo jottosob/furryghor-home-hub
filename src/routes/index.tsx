@@ -38,9 +38,17 @@ import team10 from "@/assets/team-10.jpg.asset.json";
 import team11 from "@/assets/team-11.jpg.asset.json";
 const teamPhotos = [team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, team11].map((a) => a.url);
 import client from "@/assets/client.jpg";
-import space1 from "@/assets/space-1.jpg";
-import space2 from "@/assets/space-2.jpg";
-import space3 from "@/assets/space-3.jpg";
+const spacePhotos = Object.entries(
+  import.meta.glob("@/assets/space-*.jpg.asset.json", { eager: true, import: "default" }) as Record<string, { url: string }>,
+)
+  .sort(([a], [b]) => {
+    const n = (s: string) => parseInt(s.match(/space-(\d+)/)?.[1] ?? "0", 10);
+    return n(a) - n(b);
+  })
+  .map(([, a]) => a.url);
+const space1 = spacePhotos[0];
+const space2 = spacePhotos[1];
+const space3 = spacePhotos[2];
 import pet1 from "@/assets/pet-1.jpg";
 import pet2 from "@/assets/pet-2.jpg";
 import pet3 from "@/assets/pet-3.jpg";
