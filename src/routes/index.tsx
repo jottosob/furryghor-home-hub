@@ -472,7 +472,7 @@ function TourSection() {
 function ClientsGallery() {
   const base = [pet1, pet2, pet3, pet4, pet5, pet6];
   // 3 rows x 6 cols = 18 thumbnails, cycling the available pet photos
-  const pets = Array.from({ length: 18 }, (_, i) => ({
+  const pets = Array.from({ length: 12 }, (_, i) => ({
     src: base[i % base.length],
     alt: `Furryghor client pet ${i + 1}`,
   }));
