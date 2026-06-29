@@ -137,7 +137,7 @@ function Hero() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <img
-          src={hero}
+          src={hero.url}
           alt="A happy dog and cat together at Furryghor"
           className="h-full w-full object-cover"
         />
