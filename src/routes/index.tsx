@@ -446,6 +446,7 @@ function TeamSection() {
 function TourSection() {
   const photos = spacePhotos.map((src, i) => ({ src, alt: `Furryghor space ${i + 1}` }));
   const [open, setOpen] = useState<number | null>(null);
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false })).current;
   return (
     <section id="tour" className="bg-cream py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -456,7 +457,18 @@ function TourSection() {
           </h2>
         </div>
         <div className="mt-12">
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <Carousel
+            plugins={[autoplay]}
+            opts={{
+              align: "start",
+              loop: true,
+              slidesToScroll: 3,
+              breakpoints: {
+                "(max-width: 1023px)": { slidesToScroll: 1 },
+              },
+            }}
+            className="w-full"
+          >
             <CarouselContent className="-ml-4">
               {photos.map((p, i) => (
                 <CarouselItem key={i} className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3">
