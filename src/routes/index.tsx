@@ -258,7 +258,7 @@ function QualitySection() {
             Why Furryghor
           </span>
           <h2 className="mt-3 font-display text-4xl font-black leading-tight text-primary sm:text-5xl">
-            Quality pet hostel in Dhaka
+            5-star Quality Pet hotel in Dhaka
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Furryghor Foster Home is a 5-star quality hotel for your animal companions. When you are
