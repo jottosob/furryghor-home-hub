@@ -50,12 +50,18 @@ const spacePhotos = Object.entries(
 const space1 = spacePhotos[0];
 const space2 = spacePhotos[1];
 const space3 = spacePhotos[2];
-import pet1 from "@/assets/pet-1.jpg";
-import pet2 from "@/assets/pet-2.jpg";
-import pet3 from "@/assets/pet-3.jpg";
-import pet4 from "@/assets/pet-4.jpg";
-import pet5 from "@/assets/pet-5.jpg";
-import pet6 from "@/assets/pet-6.jpg";
+import client1 from "@/assets/client-1.jpg.asset.json";
+import client2 from "@/assets/client-2.jpg.asset.json";
+import client3 from "@/assets/client-3.jpg.asset.json";
+import client4 from "@/assets/client-4.jpg.asset.json";
+import client5 from "@/assets/client-5.jpg.asset.json";
+import client6 from "@/assets/client-6.jpg.asset.json";
+import client7 from "@/assets/client-7.jpg.asset.json";
+import client8 from "@/assets/client-8.jpg.asset.json";
+import client9 from "@/assets/client-9.jpg.asset.json";
+import client10 from "@/assets/client-10.jpg.asset.json";
+import client11 from "@/assets/client-11.jpg.asset.json";
+import client12 from "@/assets/client-12.jpg.asset.json";
 
 import pressNewAge from "@/assets/press-newage.png";
 import pressDailyStar from "@/assets/press-dailystar.svg";
