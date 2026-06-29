@@ -35,7 +35,7 @@ import { TopBar } from "@/components/TopBar";
 import { Footer } from "@/components/Footer";
 import { Lightbox } from "@/components/Lightbox";
 
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.jpg.asset.json";
 import serviceCatAsset from "@/assets/service-cat.jpg.asset.json";
 import serviceDogAsset from "@/assets/service-dog.jpg.asset.json";
 import serviceDayAsset from "@/assets/service-day.jpg.asset.json";
