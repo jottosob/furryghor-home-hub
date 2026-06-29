@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import { navItems } from "@/components/TopBar";
 import logo from "@/assets/logo.png";
 
 const MIRPUR = "https://www.facebook.com/Furryghor/";
@@ -44,11 +45,17 @@ export function Footer() {
           </div>
           <div>
             <h4 className="font-display text-lg font-semibold">Explore</h4>
-            <ul className="mt-3 space-y-2 text-sm text-primary-foreground/75">
-              <li><a href="#about" className="hover:text-accent">About Us</a></li>
-              <li><a href="#gallery" className="hover:text-accent">Gallery</a></li>
-              <li><a href="#services" className="hover:text-accent">Services</a></li>
-              <li><a href="#contact" className="hover:text-accent">Contact</a></li>
+            <ul className="mt-3 flex flex-col gap-2">
+              {navItems.map((n) => (
+                <li key={n.label}>
+                  <a
+                    href={n.href}
+                    className="inline-flex rounded-full px-3 py-1.5 text-sm font-medium text-primary-foreground/80 transition hover:bg-accent/15 hover:text-primary-foreground"
+                  >
+                    {n.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
