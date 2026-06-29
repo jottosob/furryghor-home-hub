@@ -354,7 +354,7 @@ function ReviewSection() {
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
             Loved by pet parents
           </span>
-          <p className="mt-4 font-display text-2xl leading-relaxed text-primary sm:text-3xl">
+          <p className="mt-4 font-display text-xl leading-relaxed text-primary sm:text-2xl">
             <span className="text-5xl text-accent">“</span>
             A nice holiday home for furr babies. I found the best place where I can keep my cat safe
             and also happy while I am travelling. I kept Sophie at Furryghor for 3 nights as I went
