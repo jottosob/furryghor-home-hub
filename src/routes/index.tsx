@@ -388,14 +388,14 @@ function TeamSection() {
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Our team</span>
           <h2 className="mt-3 font-display text-4xl font-black sm:text-5xl">Amazing team</h2>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85">
-            The caregivers uncles are expert and well trained to handle cats and dogs, and they
-            really care for the animals so they always go the extra mile. The manager aunty and uncles
-            are always there to act as a bridge between the animals and the parents, ensuring peace of
-            mind.
+            Caregiver uncles treat every pet as if it were their own. From feeding and cleaning to
+            playtime and cuddles, they always go the extra mile to make every stay safe, comfortable,
+            and stress-free.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-primary-foreground/85">
-            We all have pets and we know how important it is to ensure a safe and fun atmosphere for
-            them.
+            Manager uncle and aunties are the bridge between pet parents and their furry companions,
+            sharing regular updates, answering questions, and ensuring you're always connected,
+            even when you're apart.
           </p>
         </div>
         <div className="order-1 md:order-2">
