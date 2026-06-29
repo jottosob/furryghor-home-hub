@@ -153,7 +153,7 @@ function Hero() {
             5-Star Pet Hotel · Dhaka
           </span>
           <h1 className="mt-6 font-display text-5xl font-black leading-[1.05] text-white sm:text-6xl lg:text-7xl">
-            The first <span className="text-accent">dog & cat hostel</span> in Dhaka
+            Dhaka's most trusted <span className="text-accent">cat & dog hotel</span>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
             Furryghor Foster Home is a 5-star quality pet hotel for your animal companions in Dhaka.
