@@ -114,6 +114,7 @@ function Home() {
       <PressSection />
       <QualitySection />
       <ServicesSection />
+      <FeaturesAmenitiesSection />
       <VideosSection />
       <ReviewSection />
       <TeamSection />
@@ -125,6 +126,7 @@ function Home() {
     </div>
   );
 }
+
 
 /* ─────────── Hero ─────────── */
 function Hero() {
@@ -330,8 +332,93 @@ function ServicesSection() {
   );
 }
 
-/* ─────────── Videos ─────────── */
-function VideosSection() {
+/* ─────────── Features & Amenities ─────────── */
+function FeaturesAmenitiesSection() {
+  const features = [
+    {
+      icon: Clock,
+      title: "24/7 Care",
+      desc: "Round-the-clock caregivers keep every pet safe, fed, and comforted day and night.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Safe & Secure",
+      desc: "Fully monitored premises with controlled access so your pet stays protected.",
+    },
+    {
+      icon: Snowflake,
+      title: "Air-Conditioned Rooms",
+      desc: "Climate-controlled cabins keep pets cool and cozy during Dhaka's hot days.",
+    },
+    {
+      icon: HomeIcon,
+      title: "Private Cabins",
+      desc: "Clean, personal spaces for each guest to rest and relax without stress.",
+    },
+    {
+      icon: Video,
+      title: "CCTV Monitoring",
+      desc: "Live camera coverage across our facilities for constant oversight.",
+    },
+    {
+      icon: Car,
+      title: "Pickup & Drop",
+      desc: "Convenient transport options to bring your pet in and take them home safely.",
+    },
+    {
+      icon: Stethoscope,
+      title: "Vet Support",
+      desc: "On-call veterinary assistance for check-ups, meds, and emergencies.",
+    },
+    {
+      icon: Scissors,
+      title: "Grooming",
+      desc: "Bathing, brushing, nail trimming, and tidy-ups so your pet returns fresh.",
+    },
+    {
+      icon: Sparkles,
+      title: "Playtime & Activities",
+      desc: "Daily supervised play sessions, toys, and exercise for happy, healthy pets.",
+    },
+    {
+      icon: MessageCircle,
+      title: "Regular Updates",
+      desc: "Photos and messages sent to you so you never miss a moment with your pet.",
+    },
+  ];
+  return (
+    <section id="amenities" className="bg-cream py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Comfort & care</span>
+          <h2 className="mt-3 font-display text-4xl font-black text-primary sm:text-5xl">Features & Amenities</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Everything your pet needs for a comfortable, safe, and happy stay.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f) => {
+            const Icon = f.icon;
+            return (
+              <article
+                key={f.title}
+                className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-warm"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20 text-accent transition group-hover:bg-accent group-hover:text-accent-foreground">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 font-display text-lg font-bold text-primary">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
   const videos = ["cFYp6FPByh4", "2PfqkNvcKgw"];
   return (
     <section className="bg-cream py-20">
