@@ -398,7 +398,7 @@ function FeaturesAmenitiesSection() {
             Everything your pet needs for a comfortable, safe, and happy stay.
           </p>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {features.map((f) => {
             const Icon = f.icon;
             return (
