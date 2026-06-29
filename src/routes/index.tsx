@@ -1,6 +1,19 @@
 import { useEffect, useState, useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import Autoplay from "embla-carousel-autoplay";
+import {
+  Clock,
+  ShieldCheck,
+  Snowflake,
+  Home,
+  Video,
+  Car,
+  Stethoscope,
+  Scissors,
+  Sparkles,
+  MessageCircle,
+} from "lucide-react";
+
 
 import {
   Accordion,
