@@ -418,8 +418,10 @@ function FeaturesAmenitiesSection() {
   );
 }
 
-
+/* ─────────── Videos ─────────── */
+function VideosSection() {
   const videos = ["cFYp6FPByh4", "2PfqkNvcKgw"];
+
   return (
     <section className="bg-cream py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
