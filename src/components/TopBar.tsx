@@ -51,17 +51,10 @@ export function TopBar() {
               <SheetTitle>Navigation menu</SheetTitle>
             </SheetHeader>
             <div className="flex h-full flex-col">
-              <div className="flex items-center justify-between border-b border-border px-4 py-4">
+              <div className="flex items-center border-b border-border px-4 py-4">
                 <span className="font-display text-lg font-semibold text-foreground">
                   Menu
                 </span>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="inline-flex items-center justify-center rounded-md p-2"
-                  aria-label="Close menu"
-                >
-                  <X className="h-5 w-5" />
-                </button>
               </div>
               <nav className="flex flex-col px-4 py-6">
                 {navItems.map((n) => (
