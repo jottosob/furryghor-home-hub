@@ -5,7 +5,7 @@ import {
   Clock,
   ShieldCheck,
   Snowflake,
-  Home,
+  Home as HomeIcon,
   Video,
   Car,
   Stethoscope,
@@ -13,6 +13,7 @@ import {
   Sparkles,
   MessageCircle,
 } from "lucide-react";
+
 
 
 import {
