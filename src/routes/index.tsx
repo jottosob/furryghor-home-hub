@@ -19,9 +19,12 @@ import { Footer } from "@/components/Footer";
 import { Lightbox } from "@/components/Lightbox";
 
 import hero from "@/assets/hero.jpg";
-import serviceCat from "@/assets/service-cat.jpg";
-import serviceDog from "@/assets/service-dog.jpg";
-import serviceDay from "@/assets/service-day.jpg";
+import serviceCatAsset from "@/assets/service-cat.jpg.asset.json";
+import serviceDogAsset from "@/assets/service-dog.jpg.asset.json";
+import serviceDayAsset from "@/assets/service-day.jpg.asset.json";
+const serviceCat = serviceCatAsset.url;
+const serviceDog = serviceDogAsset.url;
+const serviceDay = serviceDayAsset.url;
 import team1 from "@/assets/team-1.jpg.asset.json";
 import team2 from "@/assets/team-2.jpg.asset.json";
 import team3 from "@/assets/team-3.jpg.asset.json";
