@@ -388,10 +388,10 @@ function TeamSection() {
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Our team</span>
           <h2 className="mt-3 font-display text-4xl font-black sm:text-5xl">Amazing team</h2>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85">
-            Us three founders (Emil, Nabila & Farhan) started Furryghor as a common passion project
-            for pets of Dhaka, Bangladesh. We face the problem every year when we are planning trips
-            and vacations — and we wanted to build something to solve that problem = resulting in
-            Furryghor!
+            The caregivers uncles are expert and well trained to handle cats and dogs, and they
+            really care for the animals so they always go the extra mile. The manager aunty and uncles
+            are always there to act as a bridge between the animals and the parents, ensuring peace of
+            mind.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-primary-foreground/85">
             We all have pets and we know how important it is to ensure a safe and fun atmosphere for
