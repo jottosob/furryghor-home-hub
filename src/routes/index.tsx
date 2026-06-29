@@ -670,6 +670,10 @@ function FAQSection() {
       q: "Can I get access to the CCTV?",
       a: "At this moment, we don't allow access to CCTV, however, you can message or video call us anytime and we will be able to share photos / videos. Our caregivers are in Furryghor 24/7.",
     },
+    {
+      q: "What do I need to have for booking?",
+      a: "Parent's ID is needed (NID / Passport). And the cat / dog must be vaccinated, and should not have any disease.",
+    },
   ];
   return (
     <section className="bg-cream py-20 sm:py-28">
