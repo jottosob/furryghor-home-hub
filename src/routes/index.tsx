@@ -443,17 +443,7 @@ function TeamSection() {
 
 /* ─────────── Tour (Carousel) ─────────── */
 function TourSection() {
-  const photos = [
-    { src: space1, alt: "Furryghor interior" },
-    { src: space2, alt: "Dog apartments" },
-    { src: space3, alt: "Reception area" },
-    { src: serviceCat, alt: "Cat boarding cabin" },
-    { src: serviceDog, alt: "Dog play area" },
-    { src: serviceDay, alt: "Day stay lounge" },
-    { src: pet1, alt: "Happy guest pet" },
-    { src: pet4, alt: "Cozy nap spot" },
-    { src: pet6, alt: "Playtime at Furryghor" },
-  ];
+  const photos = spacePhotos.map((src, i) => ({ src, alt: `Furryghor space ${i + 1}` }));
   const [open, setOpen] = useState<number | null>(null);
   return (
     <section id="tour" className="bg-cream py-20">
