@@ -9,9 +9,11 @@ import {
   Video,
   Car,
   Stethoscope,
-  Scissors,
   Sparkles,
   MessageCircle,
+  Flame,
+  TreeDeciduous,
+  Users,
 } from "lucide-react";
 
 
