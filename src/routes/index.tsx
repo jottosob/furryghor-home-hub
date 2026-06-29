@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import {
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/carousel";
 import { TopBar } from "@/components/TopBar";
 import { Footer } from "@/components/Footer";
+import { Lightbox } from "@/components/Lightbox";
 
 import hero from "@/assets/hero.jpg";
 import serviceCat from "@/assets/service-cat.jpg";
@@ -360,7 +362,7 @@ function ReviewSection() {
 /* ─────────── Team ─────────── */
 function TeamSection() {
   return (
-    <section className="bg-primary py-20 text-primary-foreground sm:py-28">
+    <section id="team" className="bg-primary py-20 text-primary-foreground sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
         <div className="order-2 md:order-1">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Our team</span>
@@ -390,9 +392,20 @@ function TeamSection() {
 
 /* ─────────── Tour (Carousel) ─────────── */
 function TourSection() {
-  const photos = [space1, space2, space3, serviceCat, serviceDog, serviceDay];
+  const photos = [
+    { src: space1, alt: "Furryghor interior" },
+    { src: space2, alt: "Dog apartments" },
+    { src: space3, alt: "Reception area" },
+    { src: serviceCat, alt: "Cat boarding cabin" },
+    { src: serviceDog, alt: "Dog play area" },
+    { src: serviceDay, alt: "Day stay lounge" },
+    { src: pet1, alt: "Happy guest pet" },
+    { src: pet4, alt: "Cozy nap spot" },
+    { src: pet6, alt: "Playtime at Furryghor" },
+  ];
+  const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="bg-cream py-20">
+    <section id="tour" className="bg-cream py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Step inside</span>
@@ -403,12 +416,16 @@ function TourSection() {
         <div className="mt-12">
           <Carousel opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
-              {photos.map((src, i) => (
+              {photos.map((p, i) => (
                 <CarouselItem key={i} className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3">
-                  <div className="overflow-hidden rounded-3xl border-4 border-background shadow-soft">
-                    <img src={src} alt={`Furryghor space ${i + 1}`} loading="lazy"
+                  <button
+                    type="button"
+                    onClick={() => setOpen(i)}
+                    className="block w-full overflow-hidden rounded-3xl border-4 border-background shadow-soft transition hover:scale-[1.02]"
+                  >
+                    <img src={p.src} alt={p.alt} loading="lazy"
                       className="aspect-[4/3] w-full object-cover" />
-                  </div>
+                  </button>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -417,13 +434,20 @@ function TourSection() {
           </Carousel>
         </div>
       </div>
+      <Lightbox images={photos} index={open} onClose={() => setOpen(null)} onIndexChange={setOpen} />
     </section>
   );
 }
 
 /* ─────────── Clients Gallery ─────────── */
 function ClientsGallery() {
-  const pets = [pet1, pet2, pet3, pet4, pet5, pet6];
+  const base = [pet1, pet2, pet3, pet4, pet5, pet6];
+  // 3 rows x 6 cols = 18 thumbnails, cycling the available pet photos
+  const pets = Array.from({ length: 18 }, (_, i) => ({
+    src: base[i % base.length],
+    alt: `Furryghor client pet ${i + 1}`,
+  }));
+  const [open, setOpen] = useState<number | null>(null);
   return (
     <section id="gallery" className="bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -434,14 +458,20 @@ function ClientsGallery() {
           </h2>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {pets.map((src, i) => (
-            <div key={i} className="group overflow-hidden rounded-2xl shadow-sm">
-              <img src={src} alt={`Furryghor client pet ${i + 1}`} loading="lazy"
+          {pets.map((p, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setOpen(i)}
+              className="group overflow-hidden rounded-2xl shadow-sm"
+            >
+              <img src={p.src} alt={p.alt} loading="lazy"
                 className="aspect-square w-full object-cover transition duration-700 group-hover:scale-110" />
-            </div>
+            </button>
           ))}
         </div>
       </div>
+      <Lightbox images={pets} index={open} onClose={() => setOpen(null)} onIndexChange={setOpen} />
     </section>
   );
 }
