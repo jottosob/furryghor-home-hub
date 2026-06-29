@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import Autoplay from "embla-carousel-autoplay";
 
 import {
   Accordion,
