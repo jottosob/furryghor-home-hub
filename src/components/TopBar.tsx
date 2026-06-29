@@ -7,7 +7,7 @@ const navItems = [
   { label: "About Us", href: "#about" },
   { label: "Tour Our Space", href: "#tour" },
   { label: "The Team", href: "#team" },
-  { label: "Products", href: "#products" },
+  { label: "Services", href: "#services" },
   { label: "Contact Us", href: "#contact" },
 ];
 
