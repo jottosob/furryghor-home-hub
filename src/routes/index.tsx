@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import {
@@ -361,6 +361,12 @@ function ReviewSection() {
 
 /* ─────────── Team ─────────── */
 function TeamSection() {
+  const slides = [team, space1, space2, space3, serviceCat, serviceDog];
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((v) => (v + 1) % slides.length), 3500);
+    return () => clearInterval(id);
+  }, [slides.length]);
   return (
     <section id="team" className="bg-primary py-20 text-primary-foreground sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
@@ -381,8 +387,31 @@ function TeamSection() {
         <div className="order-1 md:order-2">
           <div className="relative">
             <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-accent/30 blur-2xl" />
-            <img src={team} alt="Furryghor founders" loading="lazy" width={1200} height={900}
-              className="aspect-[4/3] w-full rounded-[2rem] border-4 border-primary-foreground/10 object-cover shadow-warm" />
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] border-4 border-primary-foreground/10 shadow-warm">
+              {slides.map((src, idx) => (
+                <img
+                  key={idx}
+                  src={src}
+                  alt={`Furryghor team ${idx + 1}`}
+                  loading="lazy"
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                    idx === i ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+              <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                {slides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setI(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`h-2 rounded-full transition-all ${
+                      idx === i ? "w-6 bg-white" : "w-2 bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -443,7 +472,7 @@ function TourSection() {
 function ClientsGallery() {
   const base = [pet1, pet2, pet3, pet4, pet5, pet6];
   // 3 rows x 6 cols = 18 thumbnails, cycling the available pet photos
-  const pets = Array.from({ length: 18 }, (_, i) => ({
+  const pets = Array.from({ length: 12 }, (_, i) => ({
     src: base[i % base.length],
     alt: `Furryghor client pet ${i + 1}`,
   }));
