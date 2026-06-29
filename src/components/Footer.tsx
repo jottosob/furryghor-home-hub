@@ -2,7 +2,7 @@ import { Facebook, Instagram } from "lucide-react";
 import { navItems } from "@/components/TopBar";
 import logo from "@/assets/logo.png";
 
-const MIRPUR = "https://www.facebook.com/Furryghor/";
+const MIRPUR = "https://www.facebook.com/Furryghor";
 const GULSHAN = "https://www.facebook.com/furryghorgulshan";
 
 export function Footer() {
@@ -71,7 +71,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/furryghor/"
+                href="https://www.instagram.com/furryghor"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
