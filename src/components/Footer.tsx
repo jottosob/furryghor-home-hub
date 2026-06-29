@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import { navItems } from "@/components/TopBar";
 import logo from "@/assets/logo.png";
 
 const MIRPUR = "https://www.facebook.com/Furryghor/";
