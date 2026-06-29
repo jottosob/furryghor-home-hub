@@ -674,6 +674,10 @@ function FAQSection() {
       q: "What do I need to have for booking?",
       a: "Parent's ID is needed (NID / Passport). And the cat / dog must be vaccinated, and should not have any disease.",
     },
+    {
+      q: "What is the cost?",
+      a: "The cost varies on branch location, room type, stay duration, number of pets etc. Contact us to get your custom quote!",
+    },
   ];
   return (
     <section className="bg-cream py-20 sm:py-28">
