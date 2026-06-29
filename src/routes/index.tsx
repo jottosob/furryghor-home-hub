@@ -62,6 +62,7 @@ import client9 from "@/assets/client-9.jpg.asset.json";
 import client10 from "@/assets/client-10.jpg.asset.json";
 import client11 from "@/assets/client-11.jpg.asset.json";
 import client12 from "@/assets/client-12.jpg.asset.json";
+import qualityHero from "@/assets/quality-hero.jpg.asset.json";
 
 import pressNewAge from "@/assets/press-newage.png";
 import pressDailyStar from "@/assets/press-dailystar.svg";
@@ -230,15 +231,9 @@ function QualitySection() {
   return (
     <section id="about" className="bg-cream py-20 sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
-        <div className="grid grid-cols-2 gap-3">
-          <img src={space1} alt="Pet hotel interior" loading="lazy" width={1200} height={900}
-            className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft" />
-          <div className="flex flex-col gap-3 pt-10">
-            <img src={space2} alt="Dog apartment" loading="lazy" width={1200} height={900}
-              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft" />
-            <img src={space3} alt="Reception" loading="lazy" width={1200} height={900}
-              className="aspect-square w-full rounded-3xl object-cover shadow-warm" />
-          </div>
+        <div className="flex justify-center">
+          <img src={qualityHero.url} alt="Furryghor pet hostel interior" loading="lazy" width={900} height={900}
+            className="aspect-square w-full max-w-md rounded-full object-cover shadow-warm" />
         </div>
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
