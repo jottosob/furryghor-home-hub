@@ -22,7 +22,18 @@ import hero from "@/assets/hero.jpg";
 import serviceCat from "@/assets/service-cat.jpg";
 import serviceDog from "@/assets/service-dog.jpg";
 import serviceDay from "@/assets/service-day.jpg";
-import team from "@/assets/team.jpg";
+import team1 from "@/assets/team-1.jpg.asset.json";
+import team2 from "@/assets/team-2.jpg.asset.json";
+import team3 from "@/assets/team-3.jpg.asset.json";
+import team4 from "@/assets/team-4.jpg.asset.json";
+import team5 from "@/assets/team-5.jpg.asset.json";
+import team6 from "@/assets/team-6.jpg.asset.json";
+import team7 from "@/assets/team-7.jpg.asset.json";
+import team8 from "@/assets/team-8.jpg.asset.json";
+import team9 from "@/assets/team-9.jpg.asset.json";
+import team10 from "@/assets/team-10.jpg.asset.json";
+import team11 from "@/assets/team-11.jpg.asset.json";
+const teamPhotos = [team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, team11].map((a) => a.url);
 import client from "@/assets/client.jpg";
 import space1 from "@/assets/space-1.jpg";
 import space2 from "@/assets/space-2.jpg";
@@ -361,7 +372,7 @@ function ReviewSection() {
 
 /* ─────────── Team ─────────── */
 function TeamSection() {
-  const slides = [team, space1, space2, space3, serviceCat, serviceDog];
+  const slides = teamPhotos;
   const [i, setI] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setI((v) => (v + 1) % slides.length), 3500);
