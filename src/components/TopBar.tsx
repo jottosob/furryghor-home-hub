@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const navItems = [
+export const navItems = [
   { label: "About Us", href: "#about" },
   { label: "Tour Our Space", href: "#tour" },
   { label: "The Team", href: "#team" },
