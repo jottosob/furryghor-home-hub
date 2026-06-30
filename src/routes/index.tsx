@@ -507,7 +507,7 @@ function ReviewSection() {
             <p className="font-display text-lg font-bold text-primary">— Munia Husnaeen</p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-4">
             {moreReviews.map((r) => (
               <article
                 key={r.name}
@@ -515,7 +515,11 @@ function ReviewSection() {
               >
                 <div className="flex items-center justify-between gap-2">
                   <p className="font-display text-sm font-bold text-primary">{r.name}</p>
-                  <span className="text-xs text-muted-foreground">{r.time}</span>
+                  <div className="flex shrink-0 items-center gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={10} className="fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
                 </div>
                 <p className="text-xs text-muted-foreground">{r.meta}</p>
                 <p className="mt-2 text-xs leading-relaxed text-foreground">{r.text}</p>
