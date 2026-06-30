@@ -529,7 +529,7 @@ function ReviewSection() {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href="https://maps.app.goo.gl/GwSnymdkihbPKJvt5"
               target="_blank"
