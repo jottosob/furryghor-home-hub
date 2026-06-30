@@ -14,6 +14,7 @@ import {
   Flame,
   TreeDeciduous,
   Users,
+  Star,
 } from "lucide-react";
 
 
