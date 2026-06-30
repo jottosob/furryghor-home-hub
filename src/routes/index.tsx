@@ -461,25 +461,21 @@ function ReviewSection() {
     {
       name: "Sifat Kazi",
       meta: "Local Guide · 36 reviews · 76 photos",
-      time: "a month ago",
       text: "I had a great experience with FurryGhor Mirpur. I left my two cats, Simba and Mac, in their care and it was completely hands-off for me. They regularly shared updates without me even needing to ask, which gave me real peace of mind. Highly recommended for anyone looking for reliable pet care.",
     },
     {
       name: "Tanika Mahato",
       meta: "Local Guide · 22 reviews · 8 photos",
-      time: "2 months ago",
       text: "I feel relieved whenever I keep my cats and travel overseas. They send regular updates and communication is smooth. I can't trust anyone with cats except Furry Ghor. Also in 2024 during political instability I couldn't arrange cash to coordinate all the payments, etc from ATM, and the Furry Ghor team had supported me during those difficult times. They take care with passion and love ❤️",
     },
     {
       name: "Jansen Andrei Genato",
       meta: "3 reviews · 4 photos",
-      time: "3 months ago",
       text: "This was my first time leaving my Furr Baby Taek at a pet hotel, and I was naturally a bit nervous. However, the staff went above and beyond to make us both feel comfortable. The facility is spotless, and I loved getting the video updates. It's such a relief to find a place I can trust—we will definitely be back! Giving them 10 Star",
     },
     {
       name: "Asifur Rahman Arnab",
       meta: "Local Guide · 29 reviews · 2 photos",
-      time: "10 months ago",
       text: "I've left my dogs here twice while I was out of the country, and both times they were really well taken care of. The staff is friendly and caring, and I could tell my dogs felt comfortable staying there. They came back happy and healthy, which means a lot to me. I feel at ease knowing there's a safe and reliable place for them whenever I have to travel.",
     },
   ];
