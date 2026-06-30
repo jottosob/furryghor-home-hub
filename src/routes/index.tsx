@@ -506,8 +506,10 @@ function ReviewSection() {
             <div className="h-px flex-1 bg-border" />
             <p className="font-display text-lg font-bold text-primary">— Munia Husnaeen</p>
           </div>
+        </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-4">
+        <div className="md:col-span-5">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
             {moreReviews.map((r) => (
               <article
                 key={r.name}
